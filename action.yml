@@ -1,0 +1,34 @@
+name: Last Run Check
+author: Alexander Thoukydides
+description: Check and maintain the last run date of a workflow in a repository variable
+branding:
+  icon: 'sunrise'
+  color: 'green'
+
+inputs:
+  repo_variable:
+    description: The name of the repository variable used to store the last run date
+    type: string
+    required: true
+  set_date:
+    description: Date (ISO format) to set as the last run date (defaults to current date/time)
+    type: string
+    required: false
+  check_date:
+    description: A specific date (ISO format) to compare against the last run date
+    type: string
+    required: false
+  github_token:
+    description: The GitHub token used to create an authenticated client
+    type: string
+    default: ${{ github.token }}
+
+outputs:
+  last_run_date:
+    description: The date (ISO format) of the last run of the workflow (empty string if never run)
+  is_after_last_run:
+    description: Whether the check_date is strictly after the last run date (true if never run, not set if no check_date provided)
+
+runs:
+  using: node20
+  main: dist/index.js
