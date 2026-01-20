@@ -8,7 +8,7 @@ This action uses a repository variable to store the date that a workflow was las
 ## Prerequisites
 
 Before using this workflow, ensure:
-- The workflow has `actions: write` permission (either via the default `GITHUB_TOKEN` or a fine-grained token).
+- A fine-grained Personal Access Token (PAT) has been created with **Variables: Read and write** permission.
 
 ## Inputs
 
@@ -19,7 +19,7 @@ Various inputs are defined in the action to configure its operation:
 | `repo_variable` | The name of the repository variable used to store the last run date | *required*
 | `set_date` | Date (ISO format) to set as the last run date | *current date/time*
 | `check_date` | A specific date (ISO format) to compare against the last run date |
-| `github_token` | The GitHub token used to create an authenticated client | `${{ github.token }}`
+| `github_token` | The GitHub token used to create an authenticated client | *required*
 
 ## Outputs
 

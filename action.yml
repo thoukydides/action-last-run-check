@@ -21,7 +21,7 @@ inputs:
   github_token:
     description: The GitHub token used to create an authenticated client
     type: string
-    default: ${{ github.token }}
+    required: true
 
 outputs:
   last_run_date:
