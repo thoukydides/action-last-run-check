@@ -8,7 +8,7 @@ This action uses a repository variable to store the date that a workflow was las
 ## Prerequisites
 
 Before using this workflow, ensure:
-- The workflow has `variables: write` permission (either via the default `GITHUB_TOKEN` or a fine-grained token).
+- The workflow has `actions: write` permission (either via the default `GITHUB_TOKEN` or a fine-grained token).
 
 ## Inputs
 
@@ -37,8 +37,7 @@ Example workflow to check whether the repository has been updated since the last
 ```yaml
 name: Repository Updated?
 permissions:
-  metadata: read
-  variables: write
+  actions: write
 
 on:
   workflow_dispatch:
