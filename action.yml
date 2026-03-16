@@ -30,5 +30,5 @@ outputs:
     description: Whether the check_date is strictly after the last run date (true if never run, not set if no check_date provided)
 
 runs:
-  using: node20
+  using: node24
   main: dist/index.js

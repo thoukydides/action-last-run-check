@@ -2,7 +2,7 @@
 // Copyright © 2026 Alexander Thoukydides
 
 import { context } from '@actions/github';
-import { GitHub } from '@actions/github/lib/utils.js';
+import { GitHub } from '@actions/github/lib/utils';
 import { RequestError } from '@octokit/request-error';
 import * as core from '@actions/core';
 
